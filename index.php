@@ -94,8 +94,30 @@ LABEL;
         echo "Некоректний ввід";
     }
 }
+function drawSquare (int $xcoord, int $ycoord, string $color)
+{
+    echo "<p>X: {$xcoord}</p>
+          <p>Y: {$ycoord}</p>
+          <p>Колір: {$color}</p>";
+    if($xcoord<=1600 && $ycoord<=800)
+    {
+        echo "<div style='
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: {$color};
+    left: {$xcoord}px;
+    top: {$ycoord}px;'></div>";
+    }
+    else
+    {
+        echo "Виходить за межі екрану";
+    }
+
+}
 
 $session_id=0;
 check($session_id);
 $session_id=1;
 check($session_id);
+drawSquare(1600,800,"pink");
